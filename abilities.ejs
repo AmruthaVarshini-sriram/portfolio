@@ -1,0 +1,90 @@
+<%- include('partials/header') %>
+
+<div class="container tech-skills ">
+  <h3 class="section-heading text-uppercase">Skills</h3>
+  <table class="table table-hover table-borderless">
+    <tbody>
+      <% ability.forEach(function(skill){ %>
+      <% if(skill.type === "general") { %>
+      <tr>
+        <td><%= skill.skill %></td>
+      </tr>
+      <% } %>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+
+<div class="container tech-skills">
+  <h3 class="section-heading text-uppercase">Technical Skills</h3>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Skill</th>
+        <th scope="col">Proficiency</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% ability.forEach(function(skill){ %>
+      <% if(skill.type === "technical") { %>
+      <tr>
+        <td><%= skill.skill %></td>
+        <td><%= skill.proficiency %></td>
+      </tr>
+      <% } %>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+
+
+
+<div class="container tech-skills">
+  <h3 class="section-heading text-uppercase">Tools</h3>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Tool</th>
+        <th scope="col">Proficiency</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% ability.forEach(function(skill){ %>
+      <% if(skill.type === "tools") { %>
+      <tr>
+        <td><%= skill.skill %></td>
+        <td><%= skill.proficiency %></td>
+      </tr>
+      <% } %>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+
+<div class="container tech-skills">
+  <h3 class="section-heading text-uppercase">Certificates</h3>
+  <% certificate.forEach(function(cert){ %>
+
+  <h5>Certificate Title : </h5>
+  <p>
+    <%= cert.title %>
+  </p>
+
+  <h5>Certificate ID : </h5>
+  <p>
+    <%= cert.Id %>
+  </p>
+  <h5>About : </h5>
+  <p>
+    <%= cert.About %>
+  </p>
+  <hr class="full-line" />
+  <% }) %>
+</div>
+
+<div class="next">
+  <a href="/experience"><button type="button" class="btn btn-outline-dark next-button">Go To Experience</button></a>
+</div>
+
+
+<%- include('partials/footer') %>

@@ -1,0 +1,139 @@
+<%- include('partials/header') %>
+
+<section>
+  <div class="container-fluid colored-section ml-auto">
+    <div class="row">
+      <div class="col-lg-6 vert-line intro">
+        <h1 class="intro-title">Hi. </h1>
+        <h1 class="intro-title">I'm Amrutha Varshini</h1>
+        <a href="/Amrutha_resume.pdf" target="_blank">
+          <button type="button" class="btn btn-dark btn-lg resume-btn">View My Resume </button>
+        </a>
+        <p>This website has an Admin Dashboard at /admin to manage the owner's database. To employ this, the admin-bro plugin developed by SoftwareBrothers was used. </p>
+      </div>
+
+
+
+      <div class="col-lg-6 intro">
+        <i class='fas fa-book-reader'></i>
+        <h4>Student @ SRM IST, Kattankulathur</h4>
+
+        <i class='fas fa-microchip'></i>
+        <h4>Electronics and Communication Engineer</h4>
+        <i class='fas fa-code'></i>
+        <h4>Full Stack Developer</h4>
+      </div>
+
+    </div>
+
+    <div class="arrow">
+      <a href="/#about"><i class="fa fa-angle-down" style="color: black;"></i></a>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section id="about">
+  <div class="about-section container-fluid">
+    <div class="section-heading text-uppercase">
+      <h3>Profile</h3>
+      <hr>
+    </div>
+
+    <div class="row">
+
+      <% profileInfo.forEach(function(profile){ %>
+
+      <div class="col-md-6 profile-photo">
+
+        <h5>Name: </h5>
+        <p><%= profile.name %></p>
+        <h5>Age: </h5>
+        <p><%= myAge %> years</p>
+
+      </div>
+      <div class="col-md-6">
+        <h5>About</h5>
+        <p>
+          <%=  profile.about %>
+        </p>
+      </div>
+      <% }) %>
+
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="education-section">
+    <div class="section-heading text-uppercase">
+      <h3>Education</h3>
+      <hr>
+    </div>
+    <div class="education-details">
+      <% details.forEach(function(info){ %>
+      <h4><%= info.qualification %></h4>
+      <div class="row">
+        <div class="col-lg-6">
+          <h5>Institution : </h5>
+          <p><%= info.institution %></p>
+        </div>
+        <div class="col-lg-6">
+          <h5><%= info.type %> : </h5>
+          <p><%= info.spec %></p>
+        </div>
+      <hr class="only-on-mobile" style="width:100%" />
+      </div>
+
+    <% }) %>
+</div>
+</div>
+
+</section>
+
+
+<section>
+  <div class="language-section container-fluid">
+    <div class="section-heading text-uppercase">
+      <h3>Languages Known</h3>
+      <hr>
+    </div>
+    <div class="text-center">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th style="width:50%;">
+              <h5>Language</h5>
+            </th>
+            <th>
+              <h5>Proficiency</h5>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% languages.forEach(function(lg){ %>
+          <tr>
+            <td><%= lg.language %></td>
+            <td><%= lg.proficiency %> </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+
+
+</section>
+
+<div class="next">
+  <a href="/abilities"><button type="button" class="btn btn-outline-dark next-button">Go To Abilities</button></a>
+</div>
+
+
+<%- include('partials/footer') %>

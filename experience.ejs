@@ -1,0 +1,39 @@
+<%- include('partials/header') %>
+
+<div class="container tech-skills">
+  <h3 class="section-heading text-uppercase">Experience</h3>
+
+  <div class="row">
+    <% exp.forEach(function(exp){ %>
+    <hr class="full-line" />
+    <div class="col-md-6">
+
+      <h4> <%= exp.type %> </h4>
+      <h5><%= exp.titleposition %> </h5>
+      <h6>Start Date: </h6>
+      <p>
+        <%= exp.startdate.getDate() %> / <%= exp.startdate.getMonth() + 1 %> /
+        <%= exp.startdate.getFullYear() %>
+      </p>
+      <h6>End Date : </h6>
+      <p>
+        <%= exp.enddate.getDate() %> / <%= exp.enddate.getMonth() + 1 %> /
+        <%= exp.enddate.getFullYear() %>
+      </p>
+    </div>
+    <div class="col-md-6">
+      <h6>About : </h6>
+      <p>
+        <%= exp.about %>
+      </p>
+
+    </div>
+    <% }) %>
+  </div>
+
+
+</div>
+<div class="next">
+  <a href="/projects"><button type="button" class="btn btn-outline-dark next-button">Go To Projects</button></a>
+</div>
+<%- include('partials/footer') %>

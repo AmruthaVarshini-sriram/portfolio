@@ -1,0 +1,24 @@
+<%- include('partials/header') %>
+
+<div class="container tech-skills">
+  <h3 class="section-heading text-uppercase">Projects</h3>
+  <% projects.forEach(function(project){ %>
+    <hr class="full-line"/>
+    <h4> <%= project.title %> </h4>
+    <p>
+      <%= project.about %>
+      </p>
+      <% if(project.certificate) { %>
+        <h6>Certificate : </h6>
+        <p>
+          <%= project.certificate %>
+          </p>
+          <% } %>
+          <% if(project.link) { %>
+          <h6>Project Link : </h6>
+          <a href="<%= project.link %>" target="_blank">View Project</a>
+            <% } %>
+  <% }) %>
+</div>
+
+<%- include('partials/footer') %>
